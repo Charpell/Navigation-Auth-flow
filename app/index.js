@@ -1,10 +1,10 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+console.ignoredYellowBox = ['Remote debugger'];
 
-import Component from "./screens/SignUp";
+import React from "react";
+import { SignedOut } from "./router";
 
 export default class App extends React.Component {
   render() {
-    return <Component />;
+    return <SignedOut />;
   }
 }
