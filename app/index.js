@@ -6,7 +6,7 @@ YellowBox.ignoreWarnings(['Warning: ReactNative.createElement']);
 
 import { isSignedIn } from "./auth";
 
-import { SignedOut, SignedIn } from "./router";
+import { SignedOut, SignedIn, createRootNavigator } from "./router";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -32,10 +32,7 @@ export default class App extends React.Component {
       return null;
     }
 
-    if (signedIn) {
-      return <SignedIn />;
-    } else {
-      return <SignedOut />;
-    }
+    const Layout = createRootNavigator(signedIn);
+    return <Layout />;
   }
 }
